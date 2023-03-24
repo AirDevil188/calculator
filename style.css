@@ -18,10 +18,10 @@ div.row {
 
 button {
   width: 100px;
-  height: 100px;
+  height: 80px;
   display: flex;
   justify-content: center;
-  padding: 40px;
+  padding: 15px;
   text-align: center;
   margin: 4px;
   font-size: 2rem;
@@ -35,5 +35,5 @@ div.buttons {
 }
 
 #button-zero {
-  width: 205px;
+  width: 207px;
 }
