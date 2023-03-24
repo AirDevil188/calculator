@@ -29,9 +29,15 @@ button {
   color: black;
 }
 
+button:hover {
+  opacity: 50%;
+}
+
 div.buttons {
   border: 5px solid black;
-  background-color: dimgray;
+  padding: 10px;
+  border-radius: 5%;
+  background-color: #181818;
 }
 
 #button-zero {
