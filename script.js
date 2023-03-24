@@ -35,6 +35,9 @@ const divide = function (a, b) {
   return result;
 };
 
+// function for calculation and also so that
+// javascript can now witch operator button I have clicked,
+// and based on that it will know what operation to call.
 function calculate(x, y, operator) {
   x = firstNumber;
   y = secondNumber;
@@ -50,3 +53,46 @@ function calculate(x, y, operator) {
       return divide(x, y);
   }
 }
+
+// function to display first and second number on the display
+buttonNumbers.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (clickedOperator === "") {
+      firstNumber += button.value;
+      output.textContent = firstNumber;
+      firstNumber = parseInt(firstNumber);
+    } else {
+      secondNumber += button.value;
+      output.textContent = secondNumber;
+      secondNumber = parseInt(secondNumber);
+    }
+  });
+});
+
+// function to display different operators to the display
+operators.forEach((operator) => {
+  operator.addEventListener("click", () => {
+    if (clickedOperator === "") {
+      clickedOperator = operator.value;
+    } else {
+      output.textContent = "";
+      result = calculate();
+      output.textContent = result;
+      storedNumber = result;
+      firstNumber = storedNumber;
+      secondNumber = "";
+      clickedOperator = "";
+    }
+  });
+});
+
+// function that add's functionality to the 'equal' button
+buttonEqual.addEventListener("click", () => {
+  output.textContent = "";
+  result = calculate();
+  output.textContent = result;
+  storedNumber = result;
+  firstNumber = storedNumber;
+  secondNumber = "";
+  clickedOperator = "";
+});
