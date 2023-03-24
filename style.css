@@ -15,3 +15,19 @@ div.container {
   justify-content: center;
   height: 100vh;
 }
+
+div.buttons {
+}
+
+button {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  margin: 4px;
+  font-size: 2rem;
+  background-color: white;
+  color: black;
+}
