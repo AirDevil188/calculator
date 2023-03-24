@@ -34,3 +34,19 @@ const divide = function (a, b) {
   result = a / b;
   return result;
 };
+
+function calculate(x, y, operator) {
+  x = firstNumber;
+  y = secondNumber;
+  operator = clickedOperator;
+  switch (operator) {
+    case "+":
+      return add(x, y);
+    case "-":
+      return subtract(x, y);
+    case "*":
+      return multiply(x, y);
+    case "/":
+      return divide(x, y);
+  }
+}
