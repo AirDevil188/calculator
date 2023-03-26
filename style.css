@@ -34,7 +34,8 @@ button {
   margin-bottom: 5px;
   align-items: flex-end;
   font-size: 4em;
-  border: 3px solid black;
+  border: 2px solid black;
+  padding-right: 5px;
   background-color: lightblue;
 }
 
