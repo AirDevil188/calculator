@@ -54,10 +54,8 @@ div.buttons {
   width: 200px;
 }
 
-.operators {
-  background-color: #e1d816;
-}
-
-.equal {
+.operators,
+.equal,
+.all-clear-button {
   background-color: #e1d816;
 }
