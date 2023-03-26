@@ -5,6 +5,7 @@ const buttonNumbers = document.querySelectorAll(".numbers");
 const operators = document.querySelectorAll(".operators");
 const displayResult = document.createElement("span");
 const buttonEqual = document.querySelector(".equal");
+const allClearButton = document.querySelector(".all-clear-button");
 
 // DOM //
 
@@ -95,4 +96,8 @@ buttonEqual.addEventListener("click", () => {
   firstNumber = storedNumber;
   secondNumber = "";
   clickedOperator = "";
+});
+
+allClearButton.addEventListener("click", () => {
+  location.reload();
 });
