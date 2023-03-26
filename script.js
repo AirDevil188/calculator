@@ -14,6 +14,7 @@ let firstNumber = "";
 let secondNumber = "";
 let clickedOperator = "";
 let storedNumber = "";
+let displayValue = "";
 let result = 0;
 
 // functions for add, subtract, multiply,  and divide.
@@ -58,13 +59,15 @@ function calculate(x, y, operator) {
 // function to display first and second number on the display
 buttonNumbers.forEach((button) => {
   button.addEventListener("click", () => {
-    if (clickedOperator === "") {
-      firstNumber += button.value;
-      output.textContent = firstNumber;
+    if (clickedOperator === "" && firstNumber === "") {
+      displayValue += button.value;
+      output.textContent = displayValue;
+      displayValue = parseInt(displayValue);
       firstNumber = parseInt(firstNumber);
     } else {
-      secondNumber += button.value;
-      output.textContent = secondNumber;
+      displayValue += button.value;
+      output.textContent = displayValue;
+      displayValue = parseInt(displayValue);
       secondNumber = parseInt(secondNumber);
     }
   });
@@ -74,15 +77,17 @@ buttonNumbers.forEach((button) => {
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
     if (clickedOperator === "") {
+      firstNumber = displayValue;
+      displayValue = "";
       clickedOperator = operator.value;
     } else {
-      output.textContent = "";
+      secondNumber = displayValue;
       result = calculate();
-      output.textContent = result;
-      storedNumber = result;
-      firstNumber = storedNumber;
-      secondNumber = "";
-      clickedOperator = "";
+      clickedOperator = operator.value;
+      displayValue = result;
+      output.textContent = displayValue;
+      firstNumber = displayValue;
+      displayValue = "";
     }
   });
 });
@@ -90,14 +95,13 @@ operators.forEach((operator) => {
 // function that add's functionality to the 'equal' button
 buttonEqual.addEventListener("click", () => {
   output.textContent = "";
+  secondNumber = displayValue;
   result = calculate();
   output.textContent = result;
-  storedNumber = result;
-  firstNumber = storedNumber;
-  secondNumber = "";
-  clickedOperator = "";
 });
 
 allClearButton.addEventListener("click", () => {
   location.reload();
 });
+
+// 12 + 7 - 5 * 3
