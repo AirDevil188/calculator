@@ -16,7 +16,6 @@ let clickedOperator = "";
 let storedNumber = "";
 let displayValue = "";
 let result = 0;
-
 // functions for add, subtract, multiply,  and divide.
 const add = function (a, b) {
   result = a + b;
@@ -52,20 +51,26 @@ function calculate(x, y, operator) {
     case "*":
       return multiply(x, y);
     case "/":
-      return divide(x, y);
+      if (secondNumber === 0) {
+        output.style.fontSize = "3em";
+        return (output.textContent = "Error!");
+      } else {
+        return divide(x, y);
+      }
   }
 }
 
 // function to display first and second number on the display
 buttonNumbers.forEach((button) => {
   button.addEventListener("click", () => {
-    if (clickedOperator === "" && firstNumber === "") {
+    if (clickedOperator === "") {
       displayValue += button.value;
       output.textContent = displayValue;
       displayValue = parseInt(displayValue);
       firstNumber = parseInt(firstNumber);
     } else {
       displayValue += button.value;
+      secondNumber = displayValue;
       output.textContent = displayValue;
       displayValue = parseInt(displayValue);
       secondNumber = parseInt(secondNumber);
@@ -95,7 +100,6 @@ operators.forEach((operator) => {
 // function that add's functionality to the 'equal' button
 buttonEqual.addEventListener("click", () => {
   output.textContent = "";
-  secondNumber = displayValue;
   result = calculate();
   output.textContent = result;
 });
