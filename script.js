@@ -14,7 +14,7 @@ const clearOneCharacterButton = document.querySelector(".clear");
 let firstNumber = "";
 let secondNumber = "";
 let clickedOperator = "";
-let storedNumber = "";
+let storedString = "";
 let displayValue = "";
 let result = 0;
 // functions for add, subtract, multiply,  and divide.
@@ -105,6 +105,15 @@ buttonEqual.addEventListener("click", () => {
   output.textContent = result;
 });
 
+// function that clears all inputs
 allClearButton.addEventListener("click", () => {
   location.reload();
+});
+
+// function that clears only one number at the time from the input
+clearOneCharacterButton.addEventListener("click", () => {
+  storedString = displayValue.toString().split("").slice(0, -1).join();
+  displayValue = parseInt(storedString);
+  secondNumber = displayValue;
+  output.textContent = displayValue;
 });

@@ -4,7 +4,8 @@
   --color-number-buttons: #ffffff;
   --color-operator-buttons: #e1d816;
   --color-border: #000000;
-  --color-font: #222222;
+  --color-font: #000000;
+  --color-clear-buttons: #fc6600;
 }
 
 body {
@@ -64,7 +65,12 @@ div.buttons {
 }
 
 .operators,
-.equal,
-.all-clear-button {
+.equal {
   background-color: var(--color-operator-buttons);
+}
+
+.all-clear-button,
+.clear {
+  background-color: var(--color-clear-buttons);
+  color: var(--color-font);
 }
