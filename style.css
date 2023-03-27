@@ -60,6 +60,9 @@ div.buttons {
   background-color: var(--color-container-buttons);
 }
 
+#all-clear-button {
+  width: 200px;
+}
 #button-zero {
   width: 200px;
 }
