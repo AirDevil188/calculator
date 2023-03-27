@@ -1,7 +1,8 @@
 :root {
   --color-display: #add8e6;
   --color-container-buttons: #181818;
-  --color-operators-buttons: #e1d816;
+  --color-number-buttons: #ffffff;
+  --color-operator-buttons: #e1d816;
   --color-border: #000000;
   --color-font: #222222;
 }
@@ -30,9 +31,9 @@ button {
   height: 70px;
   text-align: center;
   font-size: 2rem;
-  background-color: white;
-  border: 2px solid #181818;
-  color: #1111;
+  background-color: var(--color-number-buttons);
+  border: 2px solid var(--color-border);
+  color: var(--color-font);
 }
 
 .display {
@@ -42,9 +43,9 @@ button {
   margin-bottom: 5px;
   align-items: flex-end;
   font-size: 4em;
-  border: 2px solid black;
+  border: 2px solid var(--color-border);
   padding-right: 5px;
-  background-color: lightblue;
+  background-color: var(--color-display);
 }
 
 button:hover {
@@ -52,10 +53,10 @@ button:hover {
 }
 
 div.buttons {
-  border: 5px solid black;
+  border: 5px solid var(--color-border);
   padding: 18px;
   border-radius: 5%;
-  background-color: #181818;
+  background-color: var(--color-container-buttons);
 }
 
 #button-zero {
@@ -65,5 +66,5 @@ div.buttons {
 .operators,
 .equal,
 .all-clear-button {
-  background-color: #e1d816;
+  background-color: var(--color-operator-buttons);
 }
