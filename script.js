@@ -110,9 +110,9 @@ allClearButton.addEventListener("click", () => {
   location.reload();
 });
 
-// function that clears only one number at the time from the input
+// function that clears only one number at the time from  the input
 clearOneCharacterButton.addEventListener("click", () => {
-  storedString = displayValue.toString().split("").slice(0, -1).join();
+  storedString = displayValue.toString().split("").slice(0, -1).join("");
   displayValue = parseInt(storedString);
   secondNumber = displayValue;
   output.textContent = displayValue;
