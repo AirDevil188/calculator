@@ -1,3 +1,11 @@
+:root {
+  --color-display: #add8e6;
+  --color-container-buttons: #181818;
+  --color-operators-buttons: #e1d816;
+  --color-border: #000000;
+  --color-font: #222222;
+}
+
 body {
   margin: 0;
 }
@@ -24,7 +32,7 @@ button {
   font-size: 2rem;
   background-color: white;
   border: 2px solid #181818;
-  color: black;
+  color: #1111;
 }
 
 .display {
