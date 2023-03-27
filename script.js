@@ -7,6 +7,7 @@ const displayResult = document.createElement("span");
 const buttonEqual = document.querySelector(".equal");
 const allClearButton = document.querySelector(".all-clear-button");
 const clearOneCharacterButton = document.querySelector(".clear");
+const decimalButtonNumber = document.querySelector(".decimal-operator");
 
 // DOM //
 
@@ -17,6 +18,8 @@ let clickedOperator = "";
 let storedString = "";
 let displayValue = "";
 let result = 0;
+let decimalAllowed = false;
+let count = 0;
 // functions for add, subtract, multiply,  and divide.
 const add = function (a, b) {
   result = a + b;
@@ -64,12 +67,23 @@ function calculate(x, y, operator) {
 // function to display first and second number on the display
 buttonNumbers.forEach((button) => {
   button.addEventListener("click", () => {
-    if (clickedOperator === "") {
+    if (clickedOperator === "" && decimalAllowed === false) {
       displayValue += button.value;
       output.textContent = displayValue;
       displayValue = parseInt(displayValue);
       firstNumber = parseInt(firstNumber);
-    } else {
+    } else if (clickedOperator === "" && decimalAllowed === true) {
+      displayValue += button.value;
+      output.textContent = displayValue;
+      displayValue = parseFloat(displayValue);
+      firstNumber = parseFloat(firstNumber);
+    } else if (clickedOperator !== "" && decimalAllowed === true) {
+      displayValue += button.value;
+      secondNumber = displayValue;
+      output.textContent = displayValue;
+      displayValue = parseFloat(displayValue);
+      secondNumber = parseFloat(secondNumber);
+    } else if (clickedOperator !== "" && decimalAllowed === false) {
       displayValue += button.value;
       secondNumber = displayValue;
       output.textContent = displayValue;
@@ -86,6 +100,7 @@ operators.forEach((operator) => {
       firstNumber = displayValue;
       displayValue = "";
       clickedOperator = operator.value;
+      count--;
     } else {
       secondNumber = displayValue;
       result = calculate();
@@ -116,4 +131,16 @@ clearOneCharacterButton.addEventListener("click", () => {
   displayValue = parseInt(storedString);
   secondNumber = displayValue;
   output.textContent = displayValue;
+});
+
+//function for decimal numbers
+decimalButtonNumber.addEventListener("click", (e) => {
+  decimalAllowed = true;
+  if (decimalAllowed === true && count > 0) {
+    document.getElementById("disabled").disabled = true;
+  } else {
+    displayValue += e.target.value;
+    count++;
+    output.textContent = displayValue;
+  }
 });
