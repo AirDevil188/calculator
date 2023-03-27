@@ -6,6 +6,7 @@ const operators = document.querySelectorAll(".operators");
 const displayResult = document.createElement("span");
 const buttonEqual = document.querySelector(".equal");
 const allClearButton = document.querySelector(".all-clear-button");
+const clearOneCharacterButton = document.querySelector(".clear");
 
 // DOM //
 
@@ -107,5 +108,3 @@ buttonEqual.addEventListener("click", () => {
 allClearButton.addEventListener("click", () => {
   location.reload();
 });
-
-// 12 + 7 - 5 * 3
