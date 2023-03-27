@@ -128,9 +128,14 @@ allClearButton.addEventListener("click", () => {
 // function that clears only one number at the time from  the input
 clearOneCharacterButton.addEventListener("click", () => {
   storedString = displayValue.toString().split("").slice(0, -1).join("");
-  displayValue = parseInt(storedString);
-  secondNumber = displayValue;
-  output.textContent = displayValue;
+  if (storedString.length >= 1) {
+    displayValue = parseInt(storedString);
+    secondNumber = displayValue;
+    output.textContent = displayValue;
+  } else {
+    displayValue = parseInt(storedString);
+    document.getElementById("disabled").disabled = true;
+  }
 });
 
 //function for decimal numbers
