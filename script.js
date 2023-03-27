@@ -64,6 +64,11 @@ function calculate(x, y, operator) {
   }
 }
 
+window.addEventListener("keydown", function (e) {
+  const key = document.querySelector(`button[data-key='${e.keyCode}']`);
+  key.click();
+});
+
 // function to display first and second number on the display
 buttonNumbers.forEach((button) => {
   button.addEventListener("click", () => {
@@ -116,7 +121,7 @@ operators.forEach((operator) => {
 // function that add's functionality to the 'equal' button
 buttonEqual.addEventListener("click", () => {
   output.textContent = "";
-  result = calculate();
+  result = calculate(); //result = Math.round(result*100)
   output.textContent = result;
 });
 
