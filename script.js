@@ -9,6 +9,9 @@ const allClearButton = document.querySelector(".all-clear-button");
 const clearOneCharacterButton = document.querySelector(".clear");
 const decimalButtonNumber = document.querySelector(".decimal-operator");
 
+// to get correct year, for copyright.
+
+document.getElementById("year").innerHTML = new Date().getFullYear();
 // DOM //
 
 // variables
