@@ -112,7 +112,7 @@ operators.forEach((operator) => {
       result = calculate();
       clickedOperator = operator.value;
       displayValue = result;
-      output.textContent = displayValue;
+      output.textContent = Math.round(displayValue * 100) / 100;
       firstNumber = displayValue;
       displayValue = "";
     }
@@ -123,7 +123,7 @@ operators.forEach((operator) => {
 buttonEqual.addEventListener("click", () => {
   output.textContent = "";
   result = calculate(); //result = Math.round(result*100)
-  output.textContent = result;
+  output.textContent = Math.round(result * 100) / 100;
 });
 
 // function that clears all inputs
