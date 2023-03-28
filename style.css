@@ -1,6 +1,6 @@
 :root {
   --color-display: #add8e6;
-  --color-container-buttons: #181818;
+  --color-container-buttons: #808080;
   --color-number-buttons: #ffffff;
   --color-operator-buttons: #e1d816;
   --color-border: #000000;
@@ -33,7 +33,7 @@ button {
   text-align: center;
   font-size: 2rem;
   background-color: var(--color-number-buttons);
-  border: 2px solid var(--color-border);
+  border: 1px solid var(--color-border);
   color: var(--color-font);
 }
 
@@ -54,7 +54,7 @@ button:hover {
 }
 
 div.buttons {
-  border: 5px solid var(--color-border);
+  border: 2px solid var(--color-border);
   padding: 18px;
   border-radius: 5%;
   background-color: var(--color-container-buttons);
@@ -68,7 +68,8 @@ div.buttons {
 }
 
 .operators,
-.equal {
+.equal,
+.decimal-operator {
   background-color: var(--color-operator-buttons);
 }
 
